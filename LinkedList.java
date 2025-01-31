@@ -54,7 +54,7 @@ public static void main(String[] args) {
             if(sc.hasNextInt())
             {
             data1=sc.nextInt();
-            list.insertMiddle(data1,pos);
+            list.insertBegin(data1);
             System.out.println("LINKED LIST AFTER INSERTING");
             list.displayList();
             }
@@ -72,11 +72,21 @@ public static void main(String[] args) {
            }
         }
     }
-public void insertMiddle() 
+public void insertBegin(int data)
     {    
-//TYPE YOUR CODE HERE
+       Node newNode = new Node(data);
+       if (head == null)
+       {
+        head = newNode;
+        tail = newNode;
+       }
+       else
+       {
+        newNode.next = head;
+        head = newNode;
+       }
+       System.out.println("Element Inserted");
     }
-
 public void displayList() {
         Node current = head;
         while (current != null) {
